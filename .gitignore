@@ -152,3 +152,10 @@ Desktop.ini
 /src/test/resources/reporting/screenshots/*.png
 /src/test/resources/reporting/*.png
 /src/test/resources/reporting/**
+
+######################
+# Allure
+######################
+.allure/
+/build/reports/
+/build/allure-results/
