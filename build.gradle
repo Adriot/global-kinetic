@@ -8,9 +8,47 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+    jcenter()
     mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "http://repo.spring.io/plugins-release/" }
+    maven { url "http://maven.icm.edu.pl/artifactory/repo/" }
+    maven { url "https://repository.mulesoft.org/nexus/content/repositories/public/" }
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    maven { url "https://oss.sonatype.org/content/groups/public/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://labs.consol.de/maven/repository/" }
+    maven { url "https://repo.spring.io/libs-milestone/" }
+    maven { url "http://maven.geomajas.org/" }
+    maven { url "https://jitpack.io" }
+    maven { url "https://jcenter.bintray.com/" }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // Cucumber|JUnit|TestNG|Apache Files Readers|SQL Servers/Drivers
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-jvm', version: '1.2.5', ext: 'pom'
+    compile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-testng', version: '1.2.5'
+    compile group: 'com.beust', name: 'jcommander', version: '1.72'
+    compile group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
+    compile group: 'net.masterthought', name: 'cucumber-reporting', version: '4.7.0'
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.apache.poi', name: 'poi-excelant', version: '4.1.0'
+    compile group: 'org.testng', name: 'testng', version: '7.0.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+    compile group: 'com.microsoft.sqlserver', name: 'sqljdbc4', version: '4.0'
+    compile group: 'net.sf.jt400', name: 'jt400', version: '6.6'
+
+    // Selenium
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
+    compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.8.1'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-opera-driver', version: '3.141.59'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-edge-driver', version: '3.141.59'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '3.141.59'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.52.0'
+    compile group: 'com.github.detro.ghostdriver', name: 'phantomjsdriver', version: '1.1.0'
+    compile group: 'org.seleniumhq.selenium.client-drivers', name: 'selenium-java-client-driver', version: '1.0.2'
 }
