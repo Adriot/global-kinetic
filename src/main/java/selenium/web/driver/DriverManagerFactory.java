@@ -24,6 +24,9 @@ public class DriverManagerFactory {
             case IEXPLORER:
                 driverManager = new InternetExplorerDriverManager();
                 break;
+            case APPIUM:
+                driverManager = new AppiumDriverManager();
+                break;
             default:
                 driverManager = new ChromeDriverManager();
         }

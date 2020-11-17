@@ -8,5 +8,6 @@ public enum DriverType {
     PHANTOMJS,
     IEXPLORER,
     SELENIUM_SERVER_STANDALONE,
-    CHROMIUM
+    CHROMIUM,
+    APPIUM
 }
