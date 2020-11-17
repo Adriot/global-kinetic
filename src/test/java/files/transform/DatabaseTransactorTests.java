@@ -1,4 +1,4 @@
-package selenium.web.driver.files.transform;
+package files.transform;
 
 import files.DatabaseTransactor;
 import org.testng.annotations.Test;

@@ -1,7 +1,6 @@
-package selenium.web.driver.files.transform;
+package files.transform;
 
 import cucumber.api.DataTable;
-import files.transform.ExcelToDataTable;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
