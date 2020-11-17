@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1594126544828,531,Reactivation,200,OK,Sample Thread Group 1-1,text,true,,734,6963,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,531,0,212
+1594126545360,232,Get Policy Details,200,OK,Sample Thread Group 1-1,text,false,Test failed: text expected to contain /:status>CANCELLED/,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,167,0,65

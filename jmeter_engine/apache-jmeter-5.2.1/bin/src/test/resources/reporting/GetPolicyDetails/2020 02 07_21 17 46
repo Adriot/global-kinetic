@@ -1,0 +1,26 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1593719435191,125,Test Get Policy Details,200,OK,Sample Thread Group 1-1,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,94,0,37
+1593719435318,152,Test Get Policy Details,200,OK,Sample Thread Group 1-1,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,122,0,37
+1593719435472,164,Test Get Policy Details,200,OK,Sample Thread Group 1-1,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,131,0,47
+1593719435638,126,Test Get Policy Details,200,OK,Sample Thread Group 1-1,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,94,0,30
+1593719435767,141,Test Get Policy Details,200,OK,Sample Thread Group 1-1,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,113,0,42
+1593719436171,162,Test Get Policy Details,200,OK,Sample Thread Group 1-2,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,123,0,46
+1593719436335,138,Test Get Policy Details,200,OK,Sample Thread Group 1-2,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,108,0,37
+1593719436475,131,Test Get Policy Details,200,OK,Sample Thread Group 1-2,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,102,0,32
+1593719436608,134,Test Get Policy Details,200,OK,Sample Thread Group 1-2,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,127,0,34
+1593719436744,122,Test Get Policy Details,200,OK,Sample Thread Group 1-2,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,98,0,35
+1593719437170,133,Test Get Policy Details,200,OK,Sample Thread Group 1-3,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,101,0,39
+1593719437304,136,Test Get Policy Details,200,OK,Sample Thread Group 1-3,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,96,0,38
+1593719437441,167,Test Get Policy Details,200,OK,Sample Thread Group 1-3,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,137,0,47
+1593719437609,149,Test Get Policy Details,200,OK,Sample Thread Group 1-3,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,113,0,46
+1593719437760,147,Test Get Policy Details,200,OK,Sample Thread Group 1-3,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,112,0,40
+1593719438169,131,Test Get Policy Details,200,OK,Sample Thread Group 1-4,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,100,0,35
+1593719438303,149,Test Get Policy Details,200,OK,Sample Thread Group 1-4,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,116,0,40
+1593719438454,185,Test Get Policy Details,200,OK,Sample Thread Group 1-4,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,151,0,47
+1593719438641,162,Test Get Policy Details,200,OK,Sample Thread Group 1-4,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,131,0,39
+1593719438805,186,Test Get Policy Details,200,OK,Sample Thread Group 1-4,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,137,0,40
+1593719439190,235,Test Get Policy Details,200,OK,Sample Thread Group 1-5,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,196,0,35
+1593719439427,185,Test Get Policy Details,200,OK,Sample Thread Group 1-5,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,149,0,42
+1593719439614,125,Test Get Policy Details,200,OK,Sample Thread Group 1-5,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,106,0,38
+1593719439740,167,Test Get Policy Details,200,OK,Sample Thread Group 1-5,text,true,,4844,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,127,0,33
+1593719439908,159,Test Get Policy Details,200,OK,Sample Thread Group 1-5,text,true,,4842,686,1,1,http://10.33.130.164:10020/web/services/GSD00030PRService/GSD00030PR,109,0,36

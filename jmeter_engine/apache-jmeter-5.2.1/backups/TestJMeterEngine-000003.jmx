@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test JMeter Engine" enabled="true">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <stringProp name="TestPlan.comments"></stringProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Sample Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.ramp_time"></stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">100</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">C:/Users/F5255309/OneDrive - FRG/Downloads/ReactivationUcns.csv</stringProp>
+          <stringProp name="variableNames">policyNo</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="path" elementType="Argument">
+              <stringProp name="Argument.name">path</stringProp>
+              <stringProp name="Argument.value">/web/services/GSD00030PRService/GSD00030PR</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">http</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="port" elementType="Argument">
+              <stringProp name="Argument.name">port</stringProp>
+              <stringProp name="Argument.value">10020</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverName" elementType="Argument">
+              <stringProp name="Argument.name">serverName</stringProp>
+              <stringProp name="Argument.value">10.33.130.164</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="content-type" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">txt</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PolicyDetails" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:gsd=&quot;http://gsd00030pr.wsbeans.iseries/&quot;&gt;&#xd;
+   &lt;soap:Header/&gt;&#xd;
+   &lt;soap:Body&gt;&#xd;
+      &lt;gsd:gensrv_getpolicydetail&gt;&#xd;
+         &lt;arg0&gt;&#xd;
+            &lt;p_XMLIN&gt;&#xd;
+               &lt;length&gt;10000&lt;/length&gt;&#xd;
+               &lt;string&gt;&lt;![CDATA[&lt;input&gt;&lt;policy&gt;${policyNo}&lt;/policy&gt;&lt;username&gt;F7890124&lt;/username&gt;&lt;/input&gt;]]&gt;&#xd;
+&lt;/string&gt;&#xd;
+&lt;/p_XMLIN&gt;&#xd;
+         &lt;/arg0&gt;&#xd;
+      &lt;/gsd:gensrv_getpolicydetail&gt;&#xd;
+   &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1031784143">CANCELLED</stringProp>
+            </collectionProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">email</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">email&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">Duedate</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">duedate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">birthDate</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">birthdate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;/birthdate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">gender</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">gendercode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">coverAmount</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">coveramnt&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">id</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">idnumber&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">premiumAmount</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">premium&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">accNo</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">accountno&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">branchCode</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">branchcode&amp;amp;gt; </stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;/branchcode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">paymentDay</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">paymentday&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">bankName</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">name&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">name</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">fullname&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Re-Activate" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&#xd;
+&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:gsd=&quot;http://gsd00030pr.wsbeans.iseries/&quot;&gt;&#xd;
+   &lt;soap:Header/&gt;&#xd;
+   &lt;soap:Body&gt;&#xd;
+      &lt;gsd:gensrv_generic&gt;&#xd;
+         &lt;arg0&gt;&#xd;
+            &lt;p_XMLIN&gt;&#xd;
+               &lt;length&gt;10000&lt;/length&gt;&#xd;
+               &lt;string&gt;&lt;![CDATA[&lt;input&gt;&#xd;
+   &lt;USERNAME&gt;F7890125&lt;/USERNAME&gt;&#xd;
+   &lt;REQUESTNAME&gt;REACTIVATE&lt;/REQUESTNAME&gt;&#xd;
+   &lt;product&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;PRODUCT&lt;/key&gt;&#xd;
+         &lt;value&gt;FISFI&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;POLICY&lt;/key&gt;&#xd;
+         &lt;value&gt;${policyNo}&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;BENEFICIARYCELL&lt;/key&gt;&#xd;
+         &lt;value&gt;&#xd;
+         &lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;BENEFICIARYEMAIL&lt;/key&gt;&#xd;
+         &lt;value&gt;&#xd;
+         &lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;INCOME&lt;/key&gt;&#xd;
+         &lt;value&gt;0&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+   &lt;/product&gt;&#xd;
+   &lt;bankingDetails&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;bankName&lt;/key&gt;&#xd;
+         &lt;value&gt;null&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;branchCode&lt;/key&gt;&#xd;
+         &lt;value&gt;210835&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;accNo&lt;/key&gt;&#xd;
+         &lt;value&gt;62645783061&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;debitDate&lt;/key&gt;&#xd;
+         &lt;value&gt;20200630&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;payDay&lt;/key&gt;&#xd;
+         &lt;value&gt;30&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;accountType&lt;/key&gt;&#xd;
+         &lt;value&gt;1&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+   &lt;/bankingDetails&gt;&#xd;
+ &lt;contactDetails&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;ADDRESSLINE1&lt;/key&gt;&#xd;
+         &lt;value&gt;352 bree street&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;SUBURB&lt;/key&gt;&#xd;
+         &lt;value&gt;Newtown&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;CITY&lt;/key&gt;&#xd;
+         &lt;value&gt;johannesburg&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;POSTALCODE&lt;/key&gt;&#xd;
+         &lt;value&gt;2001&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;CELLNO&lt;/key&gt;&#xd;
+         &lt;value&gt;0789988996&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&#xd;
+         &lt;key&gt;EMAIL&lt;/key&gt;&#xd;
+         &lt;value&gt;${email}&lt;/value&gt;&#xd;
+      &lt;/attribute&gt;&#xd;
+   &lt;/contactDetails&gt;&#xd;
+   &lt;roles&gt;&#xd;
+      &lt;role&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;relationship&lt;/key&gt;&#xd;
+            &lt;value&gt;PH&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;name&lt;/key&gt;&#xd;
+           &lt;value&gt;${name}&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;middlename&lt;/key&gt;&#xd;
+            &lt;value&gt;&#xd;
+            &lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;birthDate&lt;/key&gt;&#xd;
+            &lt;value&gt;${birthDate}&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;idType&lt;/key&gt;&#xd;
+            &lt;value&gt;RSAID&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;idNumber&lt;/key&gt;&#xd;
+            &lt;value&gt;${id}&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;gender&lt;/key&gt;&#xd;
+            &lt;value&gt;${gender}&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;coverAmount&lt;/key&gt;&#xd;
+            &lt;value&gt;${coverAmount}&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+         &lt;attribute&gt;&#xd;
+            &lt;key&gt;premium&lt;/key&gt;&#xd;
+            &lt;value&gt;${premiumAmount}&lt;/value&gt;&#xd;
+         &lt;/attribute&gt;&#xd;
+      &lt;/role&gt;&#xd;
+   &lt;/roles&gt;&#xd;
+&lt;/input&gt;]]&gt;&#xd;
+&lt;/string&gt;&#xd;
+&lt;/p_XMLIN&gt;&#xd;
+&lt;/arg0&gt;&#xd;
+ &lt;/gsd:gensrv_generic&gt;&#xd;
+   &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;&#xd;
+&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains Not" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-549239803">:status&gt;UNSUCCESSFUL</stringProp>
+            </collectionProp>
+            <intProp name="Assertion.test_type">6</intProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Test JMeter Engine\2020 16 04_14 29 41\</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Test JMeter Engine\2020 16 04_14 29 41\report.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Test JMeter Engine\2020 16 04_14 29 41\report.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

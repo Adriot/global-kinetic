@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <org.apache.jorphan.collections.HashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Reactivation">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <org.apache.jorphan.collections.HashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Reactivation\2020 02 07_21 58 01\report.jtl</stringProp>
+      </ResultCollector>
+      <org.apache.jorphan.collections.HashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Reactivation\2020 02 07_21 58 01\report.csv</stringProp>
+      </ResultCollector>
+      <org.apache.jorphan.collections.HashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Reactivation\2020 02 07_21 58 01\</stringProp>
+      </ResultCollector>
+      <org.apache.jorphan.collections.HashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Sample Thread Group">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
+        <intProp name="ThreadGroup.ramp_time">5</intProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">5</intProp>
+        </elementProp>
+      </ThreadGroup>
+      <org.apache.jorphan.collections.HashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="content-type" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">txt</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <org.apache.jorphan.collections.HashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">C:/Users/F5255309/OneDrive - FRG/Downloads/ReactivationUcns.csv</stringProp>
+          <stringProp name="variableNames">policyNo</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <org.apache.jorphan.collections.HashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="path" elementType="Argument">
+              <stringProp name="Argument.name">path</stringProp>
+              <stringProp name="Argument.value">/web/services/GSD00030PRService/GSD00030PR</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">http</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="port" elementType="Argument">
+              <stringProp name="Argument.name">port</stringProp>
+              <stringProp name="Argument.value">10020</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverName" elementType="Argument">
+              <stringProp name="Argument.name">serverName</stringProp>
+              <stringProp name="Argument.value">10.33.130.164</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <org.apache.jorphan.collections.HashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Reactivation">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:gsd=&quot;http://gsd00030pr.wsbeans.iseries/&quot;&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;gsd:gensrv_generic&gt;
+         &lt;arg0&gt;
+            &lt;p_XMLIN&gt;
+               &lt;length&gt;10000&lt;/length&gt;
+               &lt;string&gt;&lt;![CDATA[&lt;input&gt;
+   &lt;USERNAME&gt;F7890125&lt;/USERNAME&gt;
+   &lt;REQUESTNAME&gt;REACTIVATE&lt;/REQUESTNAME&gt;
+   &lt;product&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;PRODUCT&lt;/key&gt;
+         &lt;value&gt;FISFI&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;POLICY&lt;/key&gt;
+         &lt;value&gt;${policyNo}&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;BENEFICIARYCELL&lt;/key&gt;
+         &lt;value&gt;
+         &lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;BENEFICIARYEMAIL&lt;/key&gt;
+         &lt;value&gt;
+         &lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;INCOME&lt;/key&gt;
+         &lt;value&gt;0&lt;/value&gt;
+      &lt;/attribute&gt;
+   &lt;/product&gt;
+   &lt;bankingDetails&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;bankName&lt;/key&gt;
+         &lt;value&gt;null&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;branchCode&lt;/key&gt;
+         &lt;value&gt;210835&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;accNo&lt;/key&gt;
+         &lt;value&gt;62645783061&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;debitDate&lt;/key&gt;
+         &lt;value&gt;20200630&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;payDay&lt;/key&gt;
+         &lt;value&gt;30&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;accountType&lt;/key&gt;
+         &lt;value&gt;1&lt;/value&gt;
+      &lt;/attribute&gt;
+   &lt;/bankingDetails&gt;
+ &lt;contactDetails&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;ADDRESSLINE1&lt;/key&gt;
+         &lt;value&gt;352 bree street&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;SUBURB&lt;/key&gt;
+         &lt;value&gt;Newtown&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;CITY&lt;/key&gt;
+         &lt;value&gt;johannesburg&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;POSTALCODE&lt;/key&gt;
+         &lt;value&gt;2001&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;CELLNO&lt;/key&gt;
+         &lt;value&gt;0789988996&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;EMAIL&lt;/key&gt;
+         &lt;value&gt;${email}&lt;/value&gt;
+      &lt;/attribute&gt;
+   &lt;/contactDetails&gt;
+   &lt;roles&gt;
+      &lt;role&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;relationship&lt;/key&gt;
+            &lt;value&gt;PH&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;name&lt;/key&gt;
+           &lt;value&gt;${name}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;middlename&lt;/key&gt;
+            &lt;value&gt;
+            &lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;birthDate&lt;/key&gt;
+            &lt;value&gt;${birthDate}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;idType&lt;/key&gt;
+            &lt;value&gt;RSAID&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;idNumber&lt;/key&gt;
+            &lt;value&gt;${id}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;gender&lt;/key&gt;
+            &lt;value&gt;${gender}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;coverAmount&lt;/key&gt;
+            &lt;value&gt;${coverAmount}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;premium&lt;/key&gt;
+            &lt;value&gt;${premiumAmount}&lt;/value&gt;
+         &lt;/attribute&gt;
+      &lt;/role&gt;
+   &lt;/roles&gt;
+&lt;/input&gt;]]&gt;
+&lt;/string&gt;
+&lt;/p_XMLIN&gt;
+&lt;/arg0&gt;
+ &lt;/gsd:gensrv_generic&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;gsd:gensrv_generic&gt;
+         &lt;arg0&gt;
+            &lt;p_XMLIN&gt;
+               &lt;length&gt;10000&lt;/length&gt;
+               &lt;string&gt;&lt;![CDATA[&lt;input&gt;
+   &lt;USERNAME&gt;F7890125&lt;/USERNAME&gt;
+   &lt;REQUESTNAME&gt;REACTIVATE&lt;/REQUESTNAME&gt;
+   &lt;product&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;PRODUCT&lt;/key&gt;
+         &lt;value&gt;FISFI&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;POLICY&lt;/key&gt;
+         &lt;value&gt;${policyNo}&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;BENEFICIARYCELL&lt;/key&gt;
+         &lt;value&gt;
+         &lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;BENEFICIARYEMAIL&lt;/key&gt;
+         &lt;value&gt;
+         &lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;INCOME&lt;/key&gt;
+         &lt;value&gt;0&lt;/value&gt;
+      &lt;/attribute&gt;
+   &lt;/product&gt;
+   &lt;bankingDetails&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;bankName&lt;/key&gt;
+         &lt;value&gt;null&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;branchCode&lt;/key&gt;
+         &lt;value&gt;210835&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;accNo&lt;/key&gt;
+         &lt;value&gt;62645783061&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;debitDate&lt;/key&gt;
+         &lt;value&gt;20200705&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;payDay&lt;/key&gt;
+         &lt;value&gt;05&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;accountType&lt;/key&gt;
+         &lt;value&gt;1&lt;/value&gt;
+      &lt;/attribute&gt;
+   &lt;/bankingDetails&gt;
+ &lt;contactDetails&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;ADDRESSLINE1&lt;/key&gt;
+         &lt;value&gt;352 bree street&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;SUBURB&lt;/key&gt;
+         &lt;value&gt;Newtown&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;CITY&lt;/key&gt;
+         &lt;value&gt;johannesburg&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;POSTALCODE&lt;/key&gt;
+         &lt;value&gt;2001&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;CELLNO&lt;/key&gt;
+         &lt;value&gt;0789988996&lt;/value&gt;
+      &lt;/attribute&gt;
+      &lt;attribute&gt;
+         &lt;key&gt;EMAIL&lt;/key&gt;
+         &lt;value&gt;${email}&lt;/value&gt;
+      &lt;/attribute&gt;
+   &lt;/contactDetails&gt;
+   &lt;roles&gt;
+      &lt;role&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;relationship&lt;/key&gt;
+            &lt;value&gt;PH&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;name&lt;/key&gt;
+           &lt;value&gt;${name}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;middlename&lt;/key&gt;
+            &lt;value&gt;
+            &lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;birthDate&lt;/key&gt;
+            &lt;value&gt;${birthDate}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;idType&lt;/key&gt;
+            &lt;value&gt;RSAID&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;idNumber&lt;/key&gt;
+            &lt;value&gt;${id}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;gender&lt;/key&gt;
+            &lt;value&gt;${gender}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;coverAmount&lt;/key&gt;
+            &lt;value&gt;${coverAmount}&lt;/value&gt;
+         &lt;/attribute&gt;
+         &lt;attribute&gt;
+            &lt;key&gt;premium&lt;/key&gt;
+            &lt;value&gt;${premiumAmount}&lt;/value&gt;
+         &lt;/attribute&gt;
+      &lt;/role&gt;
+   &lt;/roles&gt;
+&lt;/input&gt;]]&gt;
+&lt;/string&gt;
+&lt;/p_XMLIN&gt;
+&lt;/arg0&gt;
+ &lt;/gsd:gensrv_generic&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">paymentDay</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">paymentday&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">id</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">idnumber&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">Duedate</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">duedate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">name</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">fullname&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">email</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">email&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">bankName</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">name&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">branchCode</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">branchcode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;/branchcode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains Not" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-549239803">:status&gt;UNSUCCESSFUL</stringProp>
+            </collectionProp>
+            <intProp name="Assertion.test_type">6</intProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          </ResponseAssertion>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">birthDate</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">birthdate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;/birthdate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">coverAmount</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">coveramnt&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">accNo</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">accountno&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">premiumAmount</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">premium&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">gender</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">gendercode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Policy Details">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:gsd=&quot;http://gsd00030pr.wsbeans.iseries/&quot;&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;gsd:gensrv_getpolicydetail&gt;
+         &lt;arg0&gt;
+            &lt;p_XMLIN&gt;
+               &lt;length&gt;10000&lt;/length&gt;
+               &lt;string&gt;&lt;![CDATA[&lt;input&gt;&lt;policy&gt;${policyNo}&lt;/policy&gt;&lt;username&gt;F7890124&lt;/username&gt;&lt;/input&gt;]]&gt;
+&lt;/string&gt;
+&lt;/p_XMLIN&gt;
+         &lt;/arg0&gt;
+      &lt;/gsd:gensrv_getpolicydetail&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">branchCode</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">branchcode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;/branchcode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">birthDate</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">birthdate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;/birthdate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">coverAmount</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">coveramnt&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">bankName</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">name&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">paymentDay</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">paymentday&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">id</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">idnumber&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">email</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">email&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">name</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">fullname&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">premiumAmount</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">premium&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">accNo</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">accountno&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">Duedate</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">duedate&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor">
+            <stringProp name="BoundaryExtractor.refname">gender</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">gendercode&amp;amp;gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&amp;amp;lt;</stringProp>
+            <stringProp name="BoundaryExtractor.default"></stringProp>
+            <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+          </BoundaryExtractor>
+          <org.apache.jorphan.collections.HashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1309537375">:status&gt;CANCELLED</stringProp>
+            </collectionProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          </ResponseAssertion>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+      </org.apache.jorphan.collections.HashTree>
+    </org.apache.jorphan.collections.HashTree>
+  </org.apache.jorphan.collections.HashTree>
+</jmeterTestPlan>

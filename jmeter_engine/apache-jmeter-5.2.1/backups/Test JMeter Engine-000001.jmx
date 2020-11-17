@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <org.apache.jorphan.collections.HashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test JMeter Engine">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <org.apache.jorphan.collections.HashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Sample Thread Group">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">5</intProp>
+        </elementProp>
+      </ThreadGroup>
+      <org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test 172.18.189.142">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;type&quot;:&quot;fester.ui.get&quot;,&quot;id&quot;:&quot;ui.navwellness.start&quot;,&quot;parent&quot;:{&quot;id&quot;:&quot;me&quot;},&quot;channel&quot;:{&quot;vodsstandin&quot;:false,&quot;vodsmemo&quot;:false,&quot;channel&quot;:&quot;PHONE_APP&quot;,&quot;version&quot;:&quot;26&quot;,&quot;skin&quot;:&quot;FNB&quot;,&quot;country&quot;:15,&quot;subVersion&quot;:&quot;&quot;},&quot;formValues&quot;:[{&quot;key&quot;:&quot;redirectString&quot;,&quot;value&quot;:&quot;123456&quot;}],&quot;customer&quot;:{&quot;ucn&quot;:${ucn},&quot;company&quot;:15,&quot;authenticated&quot;:true,&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;idNumber&quot;:&quot;&quot;,&quot;communicationDetailsList&quot;:[],&quot;trusted&quot;:false},&quot;browser&quot;:{&quot;onlineCookie&quot;:&quot;&quot;},&quot;device&quot;:{&quot;platform&quot;:&quot;MOBI&quot;,&quot;model&quot;:&quot;Samsung Galaxy S6 Edge&quot;,&quot;gsm&quot;:true,&quot;fingerprintSupported&quot;:false,&quot;uniqueid&quot;:&quot;g7e/Acem5BXUbhL8CYkDCQPlPcABbDxBCJh508LlhwmlEB4xT2NxrIWRV3dKigMN9PUIwEDVEfkbwdm440eu1zzhWYi1Yp5Esy+gGNkr2Ta3Zpm1BGaw+OqCjuayiPrVPrGRPx1/fMvihmBHvtHS7Qb+sZlAa+K1bS6FQKwDtSXcmhsM3CRxwS2N0JIAqDnRMkRUU8oqD7UzC06V9zCGsxNmFQVhzIXdmra/MM42uHETRn231d1Z4Z3BlsIIruFBK07mMycw6rknvPhrYiDS3dp9bAzx2m9l1NV0HrNFbWiqjqArV1M3p7SfPmKDvge022tih3tHSgsZsgIB7z+24w\u003d\u003d&quot;,&quot;resolution&quot;:&quot;mdpi&quot;,&quot;height&quot;:0,&quot;width&quot;:0,&quot;jailbrokenResultsProcessed&quot;:false,&quot;jailbroken&quot;:false,&quot;nfcSupported&quot;:false,&quot;nfcEnabled&quot;:false,&quot;bluetoothSupported&quot;:false,&quot;bluetoothEnabled&quot;:false,&quot;lockscreenEnabled&quot;:false},&quot;location&quot;:{&quot;latitude&quot;:-26.119029,&quot;longitude&quot;:27.950555,&quot;altitude&quot;:0.0},&quot;moreData&quot;:{},&quot;sessionID&quot;:&quot;LQ4eUcPhd87HZ5T9IQdPAQgo&quot;,&quot;requestID&quot;:&quot;3f383911-ff48-4e11-b331-feff9f094f77&quot;,&quot;serverIP&quot;:&quot;&quot;,&quot;pushData&quot;:&quot;&quot;,&quot;widget&quot;:{&quot;dropped&quot;:false,&quot;resizable&quot;:false},&quot;hid&quot;:{&quot;accessNumber&quot;:&quot;&quot;,&quot;isEndpointSetup&quot;:false},&quot;hidStatus&quot;:{&quot;responsecode&quot;:&quot;&quot;,&quot;responsemessage&quot;:&quot;&quot;,&quot;accessNumber&quot;:&quot;&quot;}}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">C:\adroit\jmeter poc\alisTestData.csv</stringProp>
+          <stringProp name="variableNames">ucn</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <org.apache.jorphan.collections.HashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion Contains Type" enabled="true">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="-1838205928">SUBMIT</stringProp>
+          </collectionProp>
+          <intProp name="Assertion.test_type">2</intProp>
+        </ResponseAssertion>
+        <org.apache.jorphan.collections.HashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion Not Type" enabled="true">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="-1838205928">SUBMIT</stringProp>
+          </collectionProp>
+          <intProp name="Assertion.test_type">6</intProp>
+        </ResponseAssertion>
+        <org.apache.jorphan.collections.HashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="path" elementType="Argument">
+              <stringProp name="Argument.name">path</stringProp>
+              <stringProp name="Argument.value">/navwellness/UI/ui.navwellness.start</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="port" elementType="Argument">
+              <stringProp name="Argument.name">port</stringProp>
+              <stringProp name="Argument.value">8443</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverName" elementType="Argument">
+              <stringProp name="Argument.name">serverName</stringProp>
+              <stringProp name="Argument.value">172.18.189.142</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <org.apache.jorphan.collections.HashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test 172.18.189.142 II">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;type&quot;:&quot;fester.ui.get&quot;,&quot;id&quot;:&quot;ui.navwellness.start&quot;,&quot;parent&quot;:{&quot;id&quot;:&quot;me&quot;},&quot;channel&quot;:{&quot;vodsstandin&quot;:false,&quot;vodsmemo&quot;:false,&quot;channel&quot;:&quot;PHONE_APP&quot;,&quot;version&quot;:&quot;26&quot;,&quot;skin&quot;:&quot;FNB&quot;,&quot;country&quot;:15,&quot;subVersion&quot;:&quot;&quot;},&quot;formValues&quot;:[{&quot;key&quot;:&quot;redirectString&quot;,&quot;value&quot;:&quot;123456&quot;}],&quot;customer&quot;:{&quot;ucn&quot;:${ucn},&quot;company&quot;:15,&quot;authenticated&quot;:true,&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;idNumber&quot;:&quot;&quot;,&quot;communicationDetailsList&quot;:[],&quot;trusted&quot;:false},&quot;browser&quot;:{&quot;onlineCookie&quot;:&quot;&quot;},&quot;device&quot;:{&quot;platform&quot;:&quot;MOBI&quot;,&quot;model&quot;:&quot;Samsung Galaxy S6 Edge&quot;,&quot;gsm&quot;:true,&quot;fingerprintSupported&quot;:false,&quot;uniqueid&quot;:&quot;g7e/Acem5BXUbhL8CYkDCQPlPcABbDxBCJh508LlhwmlEB4xT2NxrIWRV3dKigMN9PUIwEDVEfkbwdm440eu1zzhWYi1Yp5Esy+gGNkr2Ta3Zpm1BGaw+OqCjuayiPrVPrGRPx1/fMvihmBHvtHS7Qb+sZlAa+K1bS6FQKwDtSXcmhsM3CRxwS2N0JIAqDnRMkRUU8oqD7UzC06V9zCGsxNmFQVhzIXdmra/MM42uHETRn231d1Z4Z3BlsIIruFBK07mMycw6rknvPhrYiDS3dp9bAzx2m9l1NV0HrNFbWiqjqArV1M3p7SfPmKDvge022tih3tHSgsZsgIB7z+24w\u003d\u003d&quot;,&quot;resolution&quot;:&quot;mdpi&quot;,&quot;height&quot;:0,&quot;width&quot;:0,&quot;jailbrokenResultsProcessed&quot;:false,&quot;jailbroken&quot;:false,&quot;nfcSupported&quot;:false,&quot;nfcEnabled&quot;:false,&quot;bluetoothSupported&quot;:false,&quot;bluetoothEnabled&quot;:false,&quot;lockscreenEnabled&quot;:false},&quot;location&quot;:{&quot;latitude&quot;:-26.119029,&quot;longitude&quot;:27.950555,&quot;altitude&quot;:0.0},&quot;moreData&quot;:{},&quot;sessionID&quot;:&quot;LQ4eUcPhd87HZ5T9IQdPAQgo&quot;,&quot;requestID&quot;:&quot;3f383911-ff48-4e11-b331-feff9f094f77&quot;,&quot;serverIP&quot;:&quot;&quot;,&quot;pushData&quot;:&quot;&quot;,&quot;widget&quot;:{&quot;dropped&quot;:false,&quot;resizable&quot;:false},&quot;hid&quot;:{&quot;accessNumber&quot;:&quot;&quot;,&quot;isEndpointSetup&quot;:false},&quot;hidStatus&quot;:{&quot;responsecode&quot;:&quot;&quot;,&quot;responsemessage&quot;:&quot;&quot;,&quot;accessNumber&quot;:&quot;&quot;}}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree/>
+      </org.apache.jorphan.collections.HashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Test JMeter Engine\2019 13 12_13 52 15\report.jtl</stringProp>
+      </ResultCollector>
+      <org.apache.jorphan.collections.HashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Test JMeter Engine\2019 13 12_13 52 15\</stringProp>
+      </ResultCollector>
+      <org.apache.jorphan.collections.HashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">src\test\resources\reporting\Test JMeter Engine\2019 13 12_13 52 15\report.csv</stringProp>
+      </ResultCollector>
+      <org.apache.jorphan.collections.HashTree/>
+    </org.apache.jorphan.collections.HashTree>
+  </org.apache.jorphan.collections.HashTree>
+</jmeterTestPlan>
