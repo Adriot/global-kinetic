@@ -8,6 +8,8 @@ import selenium.web.driver.DriverType;
 import selenium.web.driver.commons.page.factory.GoogleSearchPage;
 import selenium.web.driver.managers.DriverManager;
 
+import static files.Config.reportSourcePath;
+
 public class SeleniumBasePageTests {
     @Test
     public void chromeDriverManagerTest() {
@@ -20,12 +22,14 @@ public class SeleniumBasePageTests {
             Assert.assertEquals("Google", title);
 
             GoogleSearchPage googleSearchPage = new GoogleSearchPage(webDriver);
+            googleSearchPage.takeScreenshot(reportSourcePath + "/screenshots/home page " + googleSearchPage.getDateTimeStamp());
             googleSearchPage.inputSearchText("Selenium Automation");
             Thread.sleep(5000);
             googleSearchPage.pressEscapeOnSearch();
             Thread.sleep(5000);
             googleSearchPage.pressEnterOnSearch();
             Thread.sleep(5000);
+            googleSearchPage.takeScreenshot(reportSourcePath + "/screenshots/search results " + googleSearchPage.getDateTimeStamp());
             webDriver.quit();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -44,12 +48,14 @@ public class SeleniumBasePageTests {
             Assert.assertEquals("Google", title);
 
             GoogleSearchPage googleSearchPage = new GoogleSearchPage(webDriver);
+            googleSearchPage.takeScreenshot(reportSourcePath + "/screenshots/home page " + googleSearchPage.getDateTimeStamp());
             googleSearchPage.inputSearchText("Selenium Automation");
             Thread.sleep(5000);
             googleSearchPage.pressEscapeOnSearch();
             Thread.sleep(5000);
             googleSearchPage.pressEnterOnSearch();
             Thread.sleep(5000);
+            googleSearchPage.takeScreenshot(reportSourcePath + "/screenshots/search results " + googleSearchPage.getDateTimeStamp());
             webDriver.quit();
         } catch (InterruptedException e) {
             e.printStackTrace();

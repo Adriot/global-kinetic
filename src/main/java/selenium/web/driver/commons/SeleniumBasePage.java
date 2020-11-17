@@ -1,5 +1,6 @@
 package selenium.web.driver.commons;
 
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -220,6 +221,30 @@ public class SeleniumBasePage implements ITestListener {
 
     protected void pressKey(WebElement webElement, Keys keys) {
         webElement.sendKeys(keys);
+    }
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    protected byte[] takeScreenshot(String fileNamePath) {
+        try {
+            TakesScreenshot screenshot = (TakesScreenshot) this.driver;
+            File screenshotAsFile = screenshot.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screenshotAsFile, new File(fileNamePath + ".png"));
+            return screenshot.getScreenshotAs(OutputType.BYTES);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new byte[0];
+    }
+
+    @Attachment(value = "{}", type = "text/plain")
+    protected String allureTextLog(String message) {
+        return message;
+    }
+
+    protected String getDateTimeStamp() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss");
+        LocalDateTime now = LocalDateTime.now();
+        return format.format(now);
     }
 
 }
