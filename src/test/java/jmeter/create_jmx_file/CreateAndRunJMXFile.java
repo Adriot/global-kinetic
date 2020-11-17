@@ -1,4 +1,4 @@
-package jmeter.run_jmx_file.create_jmx_file;
+package jmeter.create_jmx_file;
 
 import jmeter.JMeterDriver;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
