@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         tags = {"@JMXFiles"},
-        features = {"jmeter/run_jmx_file/features"},
+        features = {"src/test/java/jmeter/run_jmx_file/features"},
         glue = {"jmeter/run_jmx_file/steps"}
 )
 
