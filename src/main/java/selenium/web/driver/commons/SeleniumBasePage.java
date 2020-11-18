@@ -224,7 +224,7 @@ public class SeleniumBasePage implements ITestListener {
     }
 
     @Attachment(value = "Page screenshot", type = "image/png")
-    protected byte[] takeScreenshot(String fileNamePath) {
+    public byte[] takeScreenshot(String fileNamePath) {
         try {
             TakesScreenshot screenshot = (TakesScreenshot) this.driver;
             File screenshotAsFile = screenshot.getScreenshotAs(OutputType.FILE);
@@ -237,11 +237,11 @@ public class SeleniumBasePage implements ITestListener {
     }
 
     @Attachment(value = "{}", type = "text/plain")
-    protected String allureTextLog(String message) {
+    public String allureTextLog(String message) {
         return message;
     }
 
-    protected String getDateTimeStamp() {
+    public String getDateTimeStamp() {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss");
         LocalDateTime now = LocalDateTime.now();
         return format.format(now);
