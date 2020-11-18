@@ -47,7 +47,7 @@ public class GlobalKineticCareers {
     @AfterMethod
     public void tearDown() {
         try {
-            // reportWriter.saveReport();
+            reportWriter.saveReport();
         } catch (Exception e) {
             e.printStackTrace();
         }

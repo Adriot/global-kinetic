@@ -24,7 +24,7 @@ public class HomePage extends SeleniumBasePage {
             webDriverWait.until(ExpectedConditions.visibilityOf(newsLetterPopupClose));
             closeNewsLetterPopup();
         } catch (Exception e) {
-            throw new Exception("Error while waitng for news letter popup");
+            // throw new Exception("Error while waitng for news letter popup");
         }
     }
 
@@ -37,7 +37,7 @@ public class HomePage extends SeleniumBasePage {
         try {
             closeNewsLetterPopup();
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         }
 
         moveToWebElementAndClick(careers);
