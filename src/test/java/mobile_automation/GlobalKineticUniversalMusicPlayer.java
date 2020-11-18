@@ -1,15 +1,32 @@
 package mobile_automation;
+import files.FilePropertiesConfig;
 import io.appium.java_client.AppiumDriver;
 import org.junit.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import page_factory.universal_music_player.*;
 import selenium.web.driver.DriverManagerFactory;
 import selenium.web.driver.DriverType;
 import selenium.web.driver.managers.DriverManager;
 
+import java.util.Properties;
+
 public class GlobalKineticUniversalMusicPlayer {
+    static Properties properties;
+    @BeforeClass
+    public static void setup() {
+        FilePropertiesConfig filePropertiesConfig = new FilePropertiesConfig(
+                "src\\test\\resources\\universal_music_player_data_config.properties");
+        filePropertiesConfig.loadProperties();
+        properties = filePropertiesConfig.getProperties();
+    }
+
     @Test
     public void universalMusicPlayerTest() {
+        String genre = properties.getProperty("GENRE");
+        String song = properties.getProperty("SONG");
+        String duration = properties.getProperty("DURATION");
+        int songDuration = Integer.valueOf(duration);
         DriverManager driverManager = DriverManagerFactory.getDriverManager(DriverType.APPIUM);
         AppiumDriver driver = driverManager.getAppiumDriver();
         Assert.assertNotNull(driver);
@@ -25,10 +42,10 @@ public class GlobalKineticUniversalMusicPlayer {
             GenreScreen genreScreen = homeScreen.clickGenres();
             Thread.sleep(2000);
             genreScreen.wailForVisibilityOfContent();
-            SongListScreen songListScreen = genreScreen.clickGenre(Genre.JAZZ_AND_BLUES);
+            SongListScreen songListScreen = genreScreen.clickGenre(Genre.valueOf(genre));
             Thread.sleep(2000);
             songListScreen.wailForVisibilityOfContent();
-            songListScreen.clickSong("The Messenger");
+            songListScreen.clickSong(song);
             Thread.sleep(2000);
             songListScreen.clickPlayPause();
             Thread.sleep(2000);
@@ -36,15 +53,15 @@ public class GlobalKineticUniversalMusicPlayer {
             Thread.sleep(2000);
             playScreen.wailForVisibilityOfContent();
             playScreen.clickPlapyPause();
-            Thread.sleep(2000);
+            Thread.sleep(songDuration);
 
-            int numberOfSongs = songListScreen.getNumberOfSongs();
+            int numberOfSongs = songListScreen.getNumberOfSongs() - 1;
             for (int i = 0; i < numberOfSongs; i++) {
                 String songTile = playScreen.getSongTile();
                 String description = playScreen.getDescription();
                 System.out.println("Title: " + songTile + " , Description: " + description);
                 playScreen.clickNext();
-                Thread.sleep(1000);
+                Thread.sleep(songDuration);
             }
 
             for (int i = 0; i < numberOfSongs; i++) {
@@ -52,7 +69,7 @@ public class GlobalKineticUniversalMusicPlayer {
                 String description = playScreen.getDescription();
                 System.out.println("Title: " + songTile + " , Description: " + description);
                 playScreen.clickPrev();
-                Thread.sleep(1000);
+                Thread.sleep(songDuration);
             }
 
         } catch (Exception e) {
