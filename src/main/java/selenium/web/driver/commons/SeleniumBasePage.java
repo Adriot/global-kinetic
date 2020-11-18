@@ -1,10 +1,16 @@
 package selenium.web.driver.commons;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestListener;
@@ -21,19 +27,58 @@ import java.util.List;
  */
 public class SeleniumBasePage implements ITestListener {
     private WebDriver driver;
+    private AppiumDriver<MobileElement> appiumDriver;
+    private AndroidDriver<AndroidElement> androidDriver;
     private WebDriverWait wait;
     private Actions actions;
     private static final int TIMEOUT = 60;
+    private static final int POLLING = 100;
 
     public SeleniumBasePage(WebDriver webDriver) {
         driver = webDriver;
         wait = new WebDriverWait(webDriver, TIMEOUT);
         actions = new Actions(webDriver);
-        PageFactory.initElements(webDriver,this);
+        initElements(this);
+    }
+
+    public SeleniumBasePage(AppiumDriver<MobileElement> appiumDriver) {
+        driver = appiumDriver;
+        this.appiumDriver = appiumDriver;
+        wait = new WebDriverWait(appiumDriver, TIMEOUT, POLLING);
+        initElements(this);
+    }
+
+    public SeleniumBasePage(AndroidDriver<AndroidElement> androidDriver) {
+        driver = androidDriver;
+        this.androidDriver = androidDriver;
+        wait = new WebDriverWait(androidDriver, TIMEOUT, POLLING);
+        initElements(this);
+    }
+
+    public void initElements(Object pageObjectsClass) {
+        try {
+            if (driver != null) {
+                PageFactory.initElements(new AjaxElementLocatorFactory(driver, TIMEOUT), pageObjectsClass);
+            } else if (appiumDriver != null) {
+                PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), pageObjectsClass);
+            } else if (androidDriver != null) {
+                PageFactory.initElements(new AppiumFieldDecorator(androidDriver), pageObjectsClass);
+            }
+        } catch (Exception e) {
+            PageFactory.initElements(driver,this);
+        }
     }
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    public AppiumDriver<MobileElement> getAppiumDriver() {
+        return appiumDriver;
+    }
+
+    public AndroidDriver<AndroidElement> getAndroidDriver() {
+        return androidDriver;
     }
 
     public WebDriverWait getWait() {
