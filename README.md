@@ -46,9 +46,11 @@ For review:
 Look at the packages:
 - selenium.web.drive
 - page_factory.global_kinetic
+
 Data Sheets:
 - The datasheet that it uses is on: src\test\resources\data\web_automation\Global Kinetic Data Sheet.xlsx
 - The config file for data is on: src\test\resources\web_automation_data_config.properties
+
 Reporting:
 - The script generates screenshots and an excel report and allure reporting is also configured
 - Find the screenshots on: src\test\resources\reporting\screenshots
