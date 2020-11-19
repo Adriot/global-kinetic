@@ -38,8 +38,8 @@ You can either checkout the individual branches for the separate sections or you
 WEB AUTOMATION
 
 For the web automation section:
-- Go to src\test\java\mobile_automation
-- Run the script GlobalKineticUniversalMusicPlayer
+- Go to: src\test\java\web_automation
+- Run the script GlobalKineticCareers
 
 For review:
 - Go to src\test\java\
@@ -58,3 +58,20 @@ Reporting:
 - To get the Allure report run the gradle tasks for allure on: other {allureReport, allureServe}
 - After running the the respective allure tasks look on build to get the generated files.
 
+
+MOBILE AUTOMATION
+
+For the Mobile Automation sections:
+- Go to: src\test\java\mobile_automation
+- Run the script GlobalKineticUniversalMusicPlayer
+
+For review:
+- Go to src\test\java\
+Look at the packages:
+- selenium.web.drive
+- page_factory.universal_music_player
+
+Reporting:
+- The script does not generates any report but allure reporting is also configured
+- To get the Allure report run the gradle tasks for allure on: other {allureReport, allureServe}
+- After running the the respective allure tasks look on build to get the generated files.
