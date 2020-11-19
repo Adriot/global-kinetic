@@ -1,5 +1,5 @@
 # global-kinetic
-GLOBAL KINETIC TECHNICAL ASSESSMENT : QA AUTOMATION ENGINEER
+# GLOBAL KINETIC TECHNICAL ASSESSMENT : QA AUTOMATION ENGINEER
 
 I created a 3 branched for the respective sections:
 
@@ -9,7 +9,7 @@ I created a 3 branched for the respective sections:
 
 I then merged them into a branch called practical which has all the 3 sections and then made it the default branch.
 
-IMPORTING/OPENING THE PROJEC:
+# IMPORTING/OPENING THE PROJEC:
 
 Preferebly one can use intelliJ to import the project.
 
@@ -35,7 +35,7 @@ The branch practical has all the 3 sections of the practical assessment.
 The others have the respective code for each section of the practical.
 You can either checkout the individual branches for the separate sections or you can use practical to run all the scripts.
 
-WEB AUTOMATION
+# WEB AUTOMATION
 
 For the web automation section:
 - Go to: src\test\java\web_automation
@@ -59,7 +59,7 @@ Reporting:
 - After running the the respective allure tasks look on build to get the generated files.
 
 
-MOBILE AUTOMATION
+# MOBILE AUTOMATION
 
 For the Mobile Automation sections:
 - Go to: src\test\java\mobile_automation
