@@ -34,12 +34,6 @@ public class HomePage extends SeleniumBasePage {
     }
 
     public CareersPage clickOnCareers() {
-        try {
-            closeNewsLetterPopup();
-        } catch (Exception e) {
-            // e.printStackTrace();
-        }
-
         moveToWebElementAndClick(careers);
         return new CareersPage(getDriver());
     }
