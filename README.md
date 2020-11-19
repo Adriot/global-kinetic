@@ -1,5 +1,5 @@
-# global-kinetic
-# GLOBAL KINETIC TECHNICAL ASSESSMENT : QA AUTOMATION ENGINEER
+# GLOBAL KINETIC
+# TECHNICAL ASSESSMENT : QA AUTOMATION ENGINEER
 
 I created a 3 branched for the respective sections:
 
@@ -75,3 +75,14 @@ Reporting:
 - The script does not generates any report but allure reporting is also configured
 - To get the Allure report run the gradle tasks for allure on: other {allureReport, allureServe}
 - After running the the respective allure tasks look on build to get the generated files.
+
+
+# API AUTOMATION
+
+For the API Automation setcion:
+- Go to: src\test\java\api_automation
+# REST Assured
+
+Go to the package: 
+- api_automation.dog_api
+- Run the script DogAPITest
