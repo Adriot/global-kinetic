@@ -65,6 +65,14 @@ For the Mobile Automation sections:
 - Go to: src\test\java\mobile_automation
 - Run the script GlobalKineticUniversalMusicPlayer
 
+Config File:
+- The config file is on: src\test\resources\universal_music_player_data_config.properties
+
+You can specify:
+- GENRE = ROCK
+- SONG = Awakening
+- DURATION = 2000
+
 For review:
 - Go to src\test\java\
 Look at the packages:
