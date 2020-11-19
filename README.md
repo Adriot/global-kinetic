@@ -115,7 +115,7 @@ Data Sheets:
 Reporting:
 - The script does generates and html report on the reporting path on a folder named as the test plan name on the datasheet.
 
-# CREATE AND RUN JMX FILE (EXISTING ONE)
+# CREATE AND RUN JMX FILE (NEW FROM CODE)
 This creates a JMX file from java code and run it using the JMeter Engine And Genarte the artifacts for reporting
 Go to the package: 
 - api_automation.create_jmx_file
